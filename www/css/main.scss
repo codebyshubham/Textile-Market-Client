@@ -1,0 +1,586 @@
+$color-blue-main : #4527A0;
+$color-white-dull : #EEEEEE;
+$color-black-main : #263238;
+$color-black : #000000;
+$color-white : #ffffff;
+$color-orange : #EF6C00;
+$color-green : #7CB342;
+$color-red : #D32F2F;
+
+
+html{
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: rgba(0,0,0,0.01);
+  font-family: Cuprum-Regular;
+  cursor: default;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+body {
+  padding: 0;
+  background: $color-white-dull none repeat scroll 0 0;
+  border: 1px solid $color-blue-main;
+  border-radius: 0;
+  box-shadow: 0 1px 6px -1px #3a4b51;
+  box-sizing: border-box;
+  height: calc(100% - 10px);
+  margin: 5px !important;
+  width: calc(100% - 10px);
+  overflow: hidden;
+  font-size: 14px;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 16px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    //height: 15px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    //-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,0.10),inset 0 -1px 0 rgba(0,0,0,0.07);
+  }
+
+  ::-webkit-scrollbar-button {
+    width: 0;
+    height: 10px;
+    //display: none;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: transparent
+  }
+
+  >.window{
+
+    $header-height : 40px;
+
+    width: 100%;
+    background: $color-white-dull;
+    height: 100%;
+    float: left;
+
+    >.header{
+      width: 100%;
+      background: $color-blue-main;
+      height: $header-height;
+      -webkit-app-region: drag;
+
+      >.title{
+        color: $color-white;
+        float: left;
+        height: $header-height;
+        line-height: $header-height;
+        margin-left: 15px;
+
+      }
+
+      >.actions{
+        float: right;
+        height: $header-height;
+        width: auto;
+
+
+        >.action{
+          width: $header-height;
+          height: 100%;
+          float: left;
+          -webkit-app-region: no-drag;
+        }
+
+        >.close{
+          background: url("../img/app/window/close.png");
+          background-size: cover;
+        }
+        >.minimize{
+          background: url("../img/app/window/minimize.png");
+          background-size: cover;
+        }
+        >.maximize{
+          background: url("../img/app/window/maximize.png");
+          background-size: cover;
+        }
+        >.disable{
+          pointer-events: none;
+          opacity: 0;
+          display: none;
+        }
+      }
+    }
+
+    >.body{
+      width: 100%;
+      height: calc(100% - #{$header-height});
+      float: left;
+      position: relative;
+
+      >.container{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      >.home-container{
+
+        $header-height : 40px;
+        >.header{
+          width: 100%;
+          height: $header-height;
+          background: $color-blue-main;
+
+          >.tabs{
+            height: $header-height;
+            float: left;
+            color: $color-white;
+            line-height: $header-height;
+            width: auto;
+
+            >.tab-action{
+              float: left;
+              padding-left: 15px;
+              padding-right: 15px;
+              color: #C9C9C9;
+            }
+
+
+            $border-height : 3px;
+            >.active{
+              color: $color-white;
+              border-bottom: $border-height solid red;
+              box-sizing: border-box;
+              line-height: $header-height - $border-height;
+              transition: all .12s ease-in-out;
+            }
+          }
+
+          >.language{
+            color: #C9C9C9;
+            display: inline-block;
+            float: right;
+            line-height: 40px;
+            margin-right: 15px;
+            width: auto;
+          }
+        }
+
+
+        >.tab-container{
+          width: 100%;
+          float: left;
+          height: calc(100% - #{$header-height});
+          position: relative;
+
+          >.tab{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: none;
+            opacity: 0;
+            pointer-events: none;
+
+            >.body{
+              height: 100%;
+              width: 100%;
+
+              >.new-transactions{
+                height: 100%;
+                width: 100%;
+                overflow: scroll;
+
+                $title-height : 50px;
+
+                >.transaction-header{
+                  width: calc(100% - 12px);
+                  margin: auto;
+                  height: $title-height;
+                  position: relative;
+
+                  >.title{
+                    color: $color-black-main;
+                    float: left;
+                    height: $title-height;
+                    line-height: $title-height;
+                    margin-left: 16px;
+                  }
+
+                  >.actions{
+                    height: 100%;
+                    right: 0;
+                    position: absolute;
+
+                    >.btn{
+                      height: 35px;
+                      width: 98px;
+                      top: 7.5px;
+                      margin-left: 10px;
+                      position: relative;
+                      float: right;
+                      border-radius: 2px;
+                      color: $color-white;
+                      line-height: 35px;
+                      text-align: center;
+                      font-size: 16px;
+                    }
+
+                    >.savebtn{
+                      background: $color-green;
+                    }
+
+                    >.cancelbtn{
+                      background: $color-red;
+                    }
+                  }
+                }
+
+                >.container{
+                  width: calc(100% - 12px);
+                  margin: auto;
+                  background: white;
+                  position: relative;
+                }
+
+                >.maindetail{
+                  height: $title-height;
+
+                  >.actions{
+                    height: 100%;
+                    position: absolute;
+
+                    >.action{
+                      height: 35px;
+                      margin-left: 15px;
+                      position: relative;
+                      float: left;
+                      top: 7.5px;
+                    }
+
+                    >.dropdownmenu{
+                      height: 35px;
+                      width: 210px;
+                      border: 1px solid #C9C9C9;
+                      color: $color-black-main;
+                      padding-left: 15px;
+                      line-height: 35px;
+                      font-size: 16px;
+                    }
+
+                    >.chalan{
+                      height: 35px;
+                      line-height: 35px;
+
+                      >input[type=text]{
+                        height: 35px;
+                        width: 66px;
+                        text-align: center;
+                        margin-left: 2px;
+                        border: 1px solid #C9C9C9;
+                        padding: 0;
+                      }
+                    }
+
+                    >.date{
+                      height: 35px;
+                      line-height: 35px;
+
+                      >input[type=text]{
+                        height: 35px;
+                        width: 134px;
+                        text-align: center;
+                        margin-left: 2px;
+                        border: 1px solid #C9C9C9;
+                        padding: 0;
+                      }
+                    }
+
+                  }
+                }
+
+                >.alldetail{
+                  margin-top: 8px;
+                  background: $color-white;
+                  padding-bottom: 15px;
+
+                  >.table-label{
+                    height: 40px;
+                    line-height: 40px;
+                    padding-left: 15px;
+                    font-size: 14px;
+                    color: $color-black-main;
+                  }
+
+                  >.productlist{
+                    width: calc(100% - 30px);
+                    margin: auto;
+
+                    >.table{
+                      border: 1px solid #E0E0E0;
+                      border-collapse: collapse;
+                      width: 100%;
+
+                      >tbody{
+
+                        >tr{
+                          >th{
+                            height: 45px;
+                            border: 1px solid #E0E0E0;
+                            border-collapse: collapse;
+                            background: #757575;
+                            color: white;
+                            font-weight: normal;
+                          }
+
+                          >td{
+                            height: 40px;
+                            border: 1px solid #E0E0E0;
+                            border-collapse: collapse;
+                            text-align: center;
+
+                            >input[type=text]{
+                              height: 40px;
+                              line-height: 40px;
+                              text-align: left;
+                              width: calc(100% - 15px);
+                              padding-left: 15px;
+                              border: none;
+                            }
+
+                            >input[type=number]{
+                              height: 40px;
+                              line-height: 40px;
+                              text-align: right;
+                              width: calc(100% - 15px);
+                              padding-right: 15px;
+                              border: none;
+                            }
+
+                            input[type=number]::-webkit-inner-spin-button,
+                            input[type=number]::-webkit-outer-spin-button {
+                              -webkit-appearance: none;
+                            }
+
+
+                          }
+
+                          >.center{
+                            >input[type=number]{
+                              height: 40px;
+                              line-height: 40px;
+                              text-align: center;
+                              padding-left: 0;
+                              padding-right: 0;
+                              width:100%;
+                              border: none;
+                            }
+                          }
+
+                          >.left{
+                            text-align: left;
+                            padding-left: 15px;
+                          }
+
+                          >.right{
+                            text-align: right;
+                            padding-right: 15px;
+                          }
+                        }
+
+                      }
+                    }
+                  }
+
+                  >.otherdetails{
+                    width: calc(100% - 30px);
+                    margin: auto;
+                    height: 150px;
+                    margin-top: 10px;
+
+                    >.notes{
+                      float: left;
+                      margin-top: 15px;
+                      font-size: 14px;
+
+                      >.label{
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        color: $color-black-main;
+                        position: absolute;
+                      }
+
+                      >textarea{
+                        width: 230px;
+                        height: 40px;
+                        position: absolute;
+                        margin-left: 40px;
+                        padding: 10px;
+                        font-family: Cuprum-Regular;
+                        color: $color-black-main;
+                        font-weight: normal;
+                        resize: none;
+                      }
+                    }
+
+                    >.amounts{
+                      width: 50%;
+                      float: right;
+
+                      >.subtotal{
+                        height: 50px;
+
+                        >.box{
+                          height: 100%;
+                          float: right;
+                          text-align: right;
+                          font-size: 14px;
+                          padding-right: 15px;
+                          line-height: 50px;
+                          color: $color-black-main;
+                        }
+
+                        >.label{
+                          line-height: 50px;
+                          padding-right: 0;
+                          margin-right: 15px;
+                          width: 57px;
+                        }
+
+                        >.amount{
+                          width: calc(20% - 15px);
+                        }
+                      }
+
+                      >.discount{
+                        height: 50px;
+
+                        >.box{
+                          height: 100%;
+                          float: right;
+                          text-align: right;
+                          font-size: 14px;
+                          line-height: 50px;
+                          color: $color-black-main;
+                        }
+
+                        >.dropdownmenu{
+                          height: 35px;
+                          width: 160px;
+                          margin-top: 7.5px;
+                          border: 1px solid #C9C9C9;
+                          padding-left: 15px;
+                          margin-right: 15px;
+                          text-align: left;
+                          line-height: 35px;
+                        }
+
+                        >input[type=text]{
+                          line-height: 33px;
+                          margin-right: 15px;
+                          margin-top: 7.5px;
+                          width: 55px;
+                          height: 33px;
+                          border: 1px solid #C9C9C9;
+                          text-align: center;
+                        }
+
+                        >.amount{
+                          width: calc(20% - 15px);
+                          padding-right: 15px;
+                        }
+                      }
+
+                      >.finaltotal{
+                        height: 50px;
+
+                        >.box{
+                          height: 100%;
+                          float: right;
+                          text-align: right;
+                          font-size: 14px;
+                          padding-right: 15px;
+                          line-height: 50px;
+                          color: $color-black-main;
+                        }
+
+                        >.label{
+                          line-height: 50px;
+                          padding-right: 0;
+                          margin-right: 15px;
+                          width: 57px;
+                        }
+
+                        >.amount{
+                          width: calc(20% - 15px);
+                        }
+                      }
+                    }
+                  }
+                }
+
+                >.popup{
+                  height: 35px;
+                  width: calc(100% - 15px);
+                  color: white;
+                  padding-left: 15px;
+                  position: absolute;
+                  bottom: 0;
+                  font-size: 14px;
+                  line-height: 35px;
+                }
+
+                >.success{
+                  background: $color-green;
+                }
+
+                >.error{
+                  background: $color-red;
+                }
+
+                >.disable{
+                  display: none;
+                }
+              }
+            }
+          }
+          >.active{
+            display: block;
+            opacity: 1;
+            pointer-events: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@font-face {
+  font-family: 'Cuprum-Regular';
+  src: url('../font/cuprum/Cuprum-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Cuprum-Bold';
+  src: url('../font/cuprum/Cuprum-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Cuprum-BoldItalic';
+  src: url('../font/cuprum/Cuprum-BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Cuprum-Italic';
+  src: url('../font/cuprum/Cuprum-Italic.ttf');
+}

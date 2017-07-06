@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+</head>
+
+<body>
+    <div class="window">
+        <div class="header">
+            <div class="title">
+                <span class="main">Embroidery</span>
+                -
+                <span class="main">Login</span>
+            </div>
+            <div class="actions">
+                <div id="window-minimize" class="minimize action"></div>
+                <div id="window-maximize" class="maximize action"></div>
+                <div id="window-close"  class="close action"></div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="home-container container">
+                <div class="header">
+                    <div class="tabs">
+                        <div class="tab-action" data-id="home">Home</div>
+                        <div class="tab-action active" data-id="customer">Customer</div>
+                        <div class="tab-action" data-id="account">Account</div>
+                        <div class="tab-action" data-id="payroll">Payroll</div>
+                        <div class="tab-action" data-id="expense">Expense</div>
+                        <div class="tab-action" data-id="transaction">Transaction</div>
+                        <div class="tab-action" data-id="report">Report</div>
+                        <div class="tab-action" data-id="help">Help</div>
+                    </div>
+
+                    <div class="language">English</div>
+                </div>
+
+                <div class="tab-container">
+                    <div class="tab" data-id="home">i am home</div>
+                    <div class="tab-customer tab active" data-id="customer">
+                        <div class="body">
+                            <div class="new-transactions">
+                                <div class="transaction-header">
+                                    <div class="title">New Transaction</div>
+                                    <div class="actions">
+                                        <div class="btn savebtn">Save</div>
+                                        <div class="btn cancelbtn">Cancel</div>
+                                    </div>
+                                </div>
+                                <div class="container maindetail">
+                                    <div class="actions">
+                                        <div class="action dropdownmenu">Anery Art</div>
+                                        <!--<div class="btn savebtn">Save</div>-->
+                                        <div class="action chalan">
+                                            <span>Chalan no</span>
+                                            <input type="text">
+                                        </div>
+
+                                        <div class="action date">
+                                            <span>Date</span>
+                                            <input type="text" id="datepicker">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container alldetail">
+                                    <div class="table-label">Product list</div>
+                                    <div class="productlist">
+                                        <table class="table">
+                                            <tr>
+                                                <th width="5%">#</th>
+                                                <th class="left" width="8%">Design no</th>
+                                                <th class="left">Description</th>
+                                                <th width="8%">Qty.</th>
+                                                <th class="right" width="8%">Rate</th>
+                                                <th class="right" width="10%">Amount</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><input type="text" value="1156"></td>
+                                                <td><input type="text" value="This is blue color"></td>
+                                                <td class="center"><input type="number" value="10"></td>
+                                                <td><input type="number" value="500"></td>
+                                                <td><input type="number" value="5000"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><input type="text" value="1156"></td>
+                                                <td><input type="text" value="This is blue color"></td>
+                                                <td class="center"><input type="number" value="10"></td>
+                                                <td><input type="number" value="500"></td>
+                                                <td><input type="number" value="5000"></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td class="lastrow"><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td class="center"><input type="number"></td>
+                                                <td><input type="number"></td>
+                                                <td><input type="number"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="otherdetails">
+                                        <div class="notes">
+                                            <div class="label">Notes</div>
+                                            <textarea>Red Color - 2 month</textarea>
+                                        </div>
+                                        <div class="amounts">
+                                            <div class="subtotal">
+                                                <div class="box amount">
+                                                    <span>Rs</span>
+                                                    <span>20000</span>
+                                                </div>
+                                                <div class="box label">Sub total</div>
+                                            </div>
+                                            <div class="discount">
+                                                <div class="box amount">
+                                                    <span>Rs</span>
+                                                    <span>1000</span>
+                                                </div>
+                                                <input class="box" type="text">
+                                                <div class=" box dropdownmenu">Discount percentage</div>
+                                            </div>
+                                            <div class="finaltotal">
+                                                <div class="box amount">
+                                                    <span>Rs</span>
+                                                    <span>19000</span>
+                                                </div>
+                                                <div class="box label">Total</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container popup success">Transaction successfully saved</div>
+                                <div class="container popup error disable">Transaction failed</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab" data-id="expense">i am expense</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="watcher.js"></script>
+<script src="js/lib/jqurey/jquery-2.1.4.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        initHomeTabs();
+        dynamicRow();
+
+    });
+
+    function dynamicRow(){
+        var lastrow = $( "body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table > tbody >tr .lastrow input");
+        var table = $( "body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table");
+        var newrow = '<tr><td></td><td class="lastrow"><input type="text"></td><td><input type="text"></td><td class="center"><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>';
+
+        lastrow.on("focus", function(e){
+            e.preventDefault();
+            table.find("td").removeClass("lastrow");
+            table.append(newrow);
+            dynamicRow();
+            lastrow.unbind("focus");
+        });
+    }
+
+    function initHomeTabs(){
+        var tabsActions = $("body > .window > .body > .home-container > .header > .tabs > .tab-action");
+        var tabsContainer = $("body > .window > .body > .home-container > .tab-container");
+        var tabs = $("body > .window > .body > .home-container > .tab-container > .tab");
+        tabsActions.on({
+            "click" : function(){
+                var $this = $(this);
+                var dataId = $this.attr("data-id");
+
+                tabsActions.removeClass("active");
+                $this.addClass("active");
+
+                tabs.removeClass("active");
+                tabsContainer.find("[data-id='"+dataId+"']").addClass("active");
+            }
+        });
+    }
+</script>
+
+<script src="js/lib/datepicker/jquery-ui.js"></script>
+<script type="text/javascript">
+$( "#datepicker" ).datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
+</script>
+</html>

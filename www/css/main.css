@@ -1,0 +1,391 @@
+html {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.01);
+  font-family: Cuprum-Regular;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+body {
+  padding: 0;
+  background: #EEEEEE none repeat scroll 0 0;
+  border: 1px solid #4527A0;
+  border-radius: 0;
+  box-shadow: 0 1px 6px -1px #3a4b51;
+  box-sizing: border-box;
+  height: calc(100% - 10px);
+  margin: 5px !important;
+  width: calc(100% - 10px);
+  overflow: hidden;
+  font-size: 14px; }
+  body ::-webkit-scrollbar {
+    width: 5px;
+    height: 16px; }
+  body ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); }
+  body ::-webkit-scrollbar-button {
+    width: 0;
+    height: 10px; }
+  body ::-webkit-scrollbar-corner {
+    background-color: transparent; }
+  body > .window {
+    width: 100%;
+    background: #EEEEEE;
+    height: 100%;
+    float: left; }
+    body > .window > .header {
+      width: 100%;
+      background: #4527A0;
+      height: 40px;
+      -webkit-app-region: drag; }
+      body > .window > .header > .title {
+        color: #ffffff;
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        margin-left: 15px; }
+      body > .window > .header > .actions {
+        float: right;
+        height: 40px;
+        width: auto; }
+        body > .window > .header > .actions > .action {
+          width: 40px;
+          height: 100%;
+          float: left;
+          -webkit-app-region: no-drag; }
+        body > .window > .header > .actions > .close {
+          background: url("../img/app/window/close.png");
+          background-size: cover; }
+        body > .window > .header > .actions > .minimize {
+          background: url("../img/app/window/minimize.png");
+          background-size: cover; }
+        body > .window > .header > .actions > .maximize {
+          background: url("../img/app/window/maximize.png");
+          background-size: cover; }
+        body > .window > .header > .actions > .disable {
+          pointer-events: none;
+          opacity: 0;
+          display: none; }
+    body > .window > .body {
+      width: 100%;
+      height: calc(100% - 40px);
+      float: left;
+      position: relative; }
+      body > .window > .body > .container {
+        width: 100%;
+        height: 100%;
+        position: absolute; }
+      body > .window > .body > .home-container > .header {
+        width: 100%;
+        height: 40px;
+        background: #4527A0; }
+        body > .window > .body > .home-container > .header > .tabs {
+          height: 40px;
+          float: left;
+          color: #ffffff;
+          line-height: 40px;
+          width: auto; }
+          body > .window > .body > .home-container > .header > .tabs > .tab-action {
+            float: left;
+            padding-left: 15px;
+            padding-right: 15px;
+            color: #C9C9C9; }
+          body > .window > .body > .home-container > .header > .tabs > .active {
+            color: #ffffff;
+            border-bottom: 3px solid red;
+            box-sizing: border-box;
+            line-height: 37px;
+            transition: all .12s ease-in-out; }
+        body > .window > .body > .home-container > .header > .language {
+          color: #C9C9C9;
+          display: inline-block;
+          float: right;
+          line-height: 40px;
+          margin-right: 15px;
+          width: auto; }
+      body > .window > .body > .home-container > .tab-container {
+        width: 100%;
+        float: left;
+        height: calc(100% - 40px);
+        position: relative; }
+        body > .window > .body > .home-container > .tab-container > .tab {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          display: none;
+          opacity: 0;
+          pointer-events: none; }
+          body > .window > .body > .home-container > .tab-container > .tab > .body {
+            height: 100%;
+            width: 100%; }
+            body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions {
+              height: 100%;
+              width: 100%;
+              overflow: scroll; }
+              body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .transaction-header {
+                width: calc(100% - 12px);
+                margin: auto;
+                height: 50px;
+                position: relative; }
+                body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .transaction-header > .title {
+                  color: #263238;
+                  float: left;
+                  height: 50px;
+                  line-height: 50px;
+                  margin-left: 16px; }
+                body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .transaction-header > .actions {
+                  height: 100%;
+                  right: 0;
+                  position: absolute; }
+                  body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .transaction-header > .actions > .btn {
+                    height: 35px;
+                    width: 98px;
+                    top: 7.5px;
+                    margin-left: 10px;
+                    position: relative;
+                    float: right;
+                    border-radius: 2px;
+                    color: #ffffff;
+                    line-height: 35px;
+                    text-align: center;
+                    font-size: 16px; }
+                  body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .transaction-header > .actions > .savebtn {
+                    background: #7CB342; }
+                  body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .transaction-header > .actions > .cancelbtn {
+                    background: #D32F2F; }
+              body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .container {
+                width: calc(100% - 12px);
+                margin: auto;
+                background: white;
+                position: relative; }
+              body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .maindetail {
+                height: 50px; }
+                body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .maindetail > .actions {
+                  height: 100%;
+                  position: absolute; }
+                  body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .maindetail > .actions > .action {
+                    height: 35px;
+                    margin-left: 15px;
+                    position: relative;
+                    float: left;
+                    top: 7.5px; }
+                  body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .maindetail > .actions > .dropdownmenu {
+                    height: 35px;
+                    width: 210px;
+                    border: 1px solid #C9C9C9;
+                    color: #263238;
+                    padding-left: 15px;
+                    line-height: 35px;
+                    font-size: 16px; }
+                  body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .maindetail > .actions > .chalan {
+                    height: 35px;
+                    line-height: 35px; }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .maindetail > .actions > .chalan > input[type=text] {
+                      height: 35px;
+                      width: 66px;
+                      text-align: center;
+                      margin-left: 2px;
+                      border: 1px solid #C9C9C9;
+                      padding: 0; }
+                  body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .maindetail > .actions > .date {
+                    height: 35px;
+                    line-height: 35px; }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .maindetail > .actions > .date > input[type=text] {
+                      height: 35px;
+                      width: 134px;
+                      text-align: center;
+                      margin-left: 2px;
+                      border: 1px solid #C9C9C9;
+                      padding: 0; }
+              body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail {
+                margin-top: 8px;
+                background: #ffffff;
+                padding-bottom: 15px; }
+                body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .table-label {
+                  height: 40px;
+                  line-height: 40px;
+                  padding-left: 15px;
+                  font-size: 14px;
+                  color: #263238; }
+                body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist {
+                  width: calc(100% - 30px);
+                  margin: auto; }
+                  body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table {
+                    border: 1px solid #E0E0E0;
+                    border-collapse: collapse;
+                    width: 100%; }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table > tbody > tr > th {
+                      height: 45px;
+                      border: 1px solid #E0E0E0;
+                      border-collapse: collapse;
+                      background: #757575;
+                      color: white;
+                      font-weight: normal; }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table > tbody > tr > td {
+                      height: 40px;
+                      border: 1px solid #E0E0E0;
+                      border-collapse: collapse;
+                      text-align: center; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table > tbody > tr > td > input[type=text] {
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: left;
+                        width: calc(100% - 15px);
+                        padding-left: 15px;
+                        border: none; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table > tbody > tr > td > input[type=number] {
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: right;
+                        width: calc(100% - 15px);
+                        padding-right: 15px;
+                        border: none; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table > tbody > tr > td input[type=number]::-webkit-inner-spin-button,
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table > tbody > tr > td input[type=number]::-webkit-outer-spin-button {
+                        -webkit-appearance: none; }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table > tbody > tr > .center > input[type=number] {
+                      height: 40px;
+                      line-height: 40px;
+                      text-align: center;
+                      padding-left: 0;
+                      padding-right: 0;
+                      width: 100%;
+                      border: none; }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table > tbody > tr > .left {
+                      text-align: left;
+                      padding-left: 15px; }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .productlist > .table > tbody > tr > .right {
+                      text-align: right;
+                      padding-right: 15px; }
+                body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails {
+                  width: calc(100% - 30px);
+                  margin: auto;
+                  height: 150px;
+                  margin-top: 10px; }
+                  body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .notes {
+                    float: left;
+                    margin-top: 15px;
+                    font-size: 14px; }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .notes > .label {
+                      width: 40px;
+                      height: 40px;
+                      line-height: 40px;
+                      color: #263238;
+                      position: absolute; }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .notes > textarea {
+                      width: 230px;
+                      height: 40px;
+                      position: absolute;
+                      margin-left: 40px;
+                      padding: 10px;
+                      font-family: Cuprum-Regular;
+                      color: #263238;
+                      font-weight: normal;
+                      resize: none; }
+                  body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts {
+                    width: 50%;
+                    float: right; }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .subtotal {
+                      height: 50px; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .subtotal > .box {
+                        height: 100%;
+                        float: right;
+                        text-align: right;
+                        font-size: 14px;
+                        padding-right: 15px;
+                        line-height: 50px;
+                        color: #263238; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .subtotal > .label {
+                        line-height: 50px;
+                        padding-right: 0;
+                        margin-right: 15px;
+                        width: 57px; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .subtotal > .amount {
+                        width: calc(20% - 15px); }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .discount {
+                      height: 50px; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .discount > .box {
+                        height: 100%;
+                        float: right;
+                        text-align: right;
+                        font-size: 14px;
+                        line-height: 50px;
+                        color: #263238; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .discount > .dropdownmenu {
+                        height: 35px;
+                        width: 160px;
+                        margin-top: 7.5px;
+                        border: 1px solid #C9C9C9;
+                        padding-left: 15px;
+                        margin-right: 15px;
+                        text-align: left;
+                        line-height: 35px; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .discount > input[type=text] {
+                        line-height: 33px;
+                        margin-right: 15px;
+                        margin-top: 7.5px;
+                        width: 55px;
+                        height: 33px;
+                        border: 1px solid #C9C9C9;
+                        text-align: center; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .discount > .amount {
+                        width: calc(20% - 15px);
+                        padding-right: 15px; }
+                    body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .finaltotal {
+                      height: 50px; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .finaltotal > .box {
+                        height: 100%;
+                        float: right;
+                        text-align: right;
+                        font-size: 14px;
+                        padding-right: 15px;
+                        line-height: 50px;
+                        color: #263238; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .finaltotal > .label {
+                        line-height: 50px;
+                        padding-right: 0;
+                        margin-right: 15px;
+                        width: 57px; }
+                      body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .alldetail > .otherdetails > .amounts > .finaltotal > .amount {
+                        width: calc(20% - 15px); }
+              body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .popup {
+                height: 35px;
+                width: calc(100% - 15px);
+                color: white;
+                padding-left: 15px;
+                position: absolute;
+                bottom: 0;
+                font-size: 14px;
+                line-height: 35px; }
+              body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .success {
+                background: #7CB342; }
+              body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .error {
+                background: #D32F2F; }
+              body > .window > .body > .home-container > .tab-container > .tab > .body > .new-transactions > .disable {
+                display: none; }
+        body > .window > .body > .home-container > .tab-container > .active {
+          display: block;
+          opacity: 1;
+          pointer-events: auto; }
+
+@font-face {
+  font-family: 'Cuprum-Regular';
+  src: url("../font/cuprum/Cuprum-Regular.ttf"); }
+@font-face {
+  font-family: 'Cuprum-Bold';
+  src: url("../font/cuprum/Cuprum-Bold.ttf"); }
+@font-face {
+  font-family: 'Cuprum-BoldItalic';
+  src: url("../font/cuprum/Cuprum-BoldItalic.ttf"); }
+@font-face {
+  font-family: 'Cuprum-Italic';
+  src: url("../font/cuprum/Cuprum-Italic.ttf"); }
+
+/*# sourceMappingURL=main.css.map */
