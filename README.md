@@ -2,4 +2,4 @@
 ![UI Image](ui.png)
 
 
-### For Kendo UI Experiment Check this Respository https://github.com/pentestershubham/Textile-Software-KendoUI-Experiment
+### For Kendo UI Experiment https://github.com/pentestershubham/Textile-Software-KendoUI-Experiment
